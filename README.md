@@ -1,7 +1,6 @@
 # The Deceptive App — Educational Ethical Hacking Project
 
-> **Live Demo:** [https://your-username.github.io/deceptive-app/](https://your-username.github.io/deceptive-app/)
-> *(Replace with your actual deployment URL)*
+> **Live Demo:** [https://is-a3.vercel.app]
 
 ---
 
