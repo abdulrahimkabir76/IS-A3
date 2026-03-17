@@ -34,7 +34,7 @@
  * Replace with your OAuth 2.0 Client ID from Google Cloud Console.
  * This value is intentionally public; it is not a secret.
  */
-const GOOGLE_CLIENT_ID = '60850688422-nqng196amrcl6kr1ink0gerc5dg05ggb.apps.googleusercontent.com';
+const GOOGLE_CLIENT_ID = '60850688422-ua267mqtm0ls2nor4uv96vf7aiput5c6.apps.googleusercontent.com';
 
 /** OAuth scope: access only to files created by this app. */
 const DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive.file';
