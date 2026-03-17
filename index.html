@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO / Open Graph ──────────────────────────────────────────────── -->
+  <title>Mian Abdul Rahim — Full-Stack Developer & Designer</title>
+  <meta name="description"
+        content="Mian Abdul Rahim is a full-stack developer specialising in modern web applications, open-source tools, and elegant UI/UX design." />
+  <meta property="og:title"       content="Mian Abdul Rahim — Developer Portfolio" />
+  <meta property="og:description" content="Creative full-stack developer & UI/UX enthusiast." />
+  <meta property="og:type"        content="website" />
+
+  <!-- ── Fonts ────────────────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ── Styles ───────────────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!--
+    ═══════════════════════════════════════════════════════════════════════
+    ACADEMIC DISCLAIMER
+    This project is designed exclusively for educational use in a supervised
+    university cybersecurity course. All demonstrations are performed with
+    explicit, informed user consent obtained through the official browser
+    permission dialog. No data is captured, stored, or transmitted without
+    that consent.
+    ═══════════════════════════════════════════════════════════════════════
+  -->
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════════════════════════════════ -->
+  <header role="banner">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="container nav__inner">
+
+        <a href="#hero" class="nav__logo" aria-label="Mian Abdul Rahim home">
+          &lt;Mian Abdul Rahim /&gt;
+        </a>
+
+        <button
+          class="nav__toggle"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav__menu" id="nav-menu" role="list">
+          <li><a href="#about"    class="nav__link">About</a></li>
+          <li><a href="#skills"   class="nav__link">Skills</a></li>
+          <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#contact"  class="nav__link">Contact</a></li>
+          <li>
+            <a href="https://github.com/" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         HERO SECTION
+         ══════════════════════════════════════════════════════════════════ -->
+    <section class="hero section" id="hero" aria-label="Introduction">
+      <div class="container hero__inner">
+
+        <!-- Text -->
+        <div class="hero__text">
+          <span class="hero__greeting">
+            👋 &nbsp; Welcome to my portfolio
+          </span>
+
+          <h1 class="hero__name">Mian Abdul Rahim</h1>
+
+          <div class="hero__role-wrap" aria-live="polite">
+            <span id="hero-role" aria-label="Typing animation"></span>
+          </div>
+
+          <p class="hero__bio">
+            I design and build modern web applications that are fast, accessible, and
+            beautiful. Passionate about open source, clean architecture, and turning
+            complex problems into elegant interfaces.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">View My Work</a>
+            <a href="#contact"  class="btn btn--ghost">Get in Touch</a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <span class="hero__stat-num">5+</span>
+              <span class="hero__stat-label">Years Exp.</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-num">40+</span>
+              <span class="hero__stat-label">Projects</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-num">12k</span>
+              <span class="hero__stat-label">GitHub Stars</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Avatar -->
+        <div class="hero__avatar-wrap" aria-hidden="true">
+          <div class="hero__avatar-ring">
+            <div class="hero__avatar">
+              <span class="hero__avatar-emoji">👨‍💻</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         ABOUT SECTION
+         ══════════════════════════════════════════════════════════════════ -->
+    <section class="section section--alt animate-on-scroll" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 class="section-title" id="about-title">About Me</h2>
+
+        <div class="about__grid">
+          <div class="about__text">
+            <p>
+              Hi! I'm <span class="about__highlight">Mian Abdul Rahim</span>, a full-stack developer
+              based in San Francisco. I specialise in building performant, accessible web
+              applications using modern JavaScript stacks.
+            </p>
+            <p>
+              With a background in computer science and five years of industry experience,
+              I've shipped products for startups and Fortune 500 companies alike.
+              I care deeply about developer experience, open-source contributions, and
+              writing code that junior engineers can confidently read.
+            </p>
+            <p>
+              When I'm not coding I'm hiking, reading distributed systems papers, or
+              contributing to community hackathons.
+            </p>
+          </div>
+
+          <div class="about__cards" role="list">
+            <div class="about__card" role="listitem">
+              <div class="about__card-icon">🎓</div>
+              <div class="about__card-title">B.Sc. Computer Science</div>
+              <div class="about__card-sub">Fast NUCES University, 2023</div>
+            </div>
+            <div class="about__card" role="listitem">
+              <div class="about__card-icon">🏢</div>
+              <div class="about__card-title">Senior Engineer</div>
+              <div class="about__card-sub">Acme Corp (2022 – present)</div>
+            </div>
+            <div class="about__card" role="listitem">
+              <div class="about__card-icon">🌍</div>
+              <div class="about__card-title">Open Source</div>
+              <div class="about__card-sub">12k+ GitHub stars</div>
+            </div>
+            <div class="about__card" role="listitem">
+              <div class="about__card-icon">🏆</div>
+              <div class="about__card-title">Hackathon Winner</div>
+              <div class="about__card-sub">HackMIT 2021 & 2023</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         SKILLS SECTION
+         ══════════════════════════════════════════════════════════════════ -->
+    <section class="section animate-on-scroll" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 class="section-title" id="skills-title">Skills &amp; Technologies</h2>
+
+        <div class="skills__grid">
+
+          <!-- Frontend -->
+          <div>
+            <h3 style="color:var(--clr-text-muted);font-size:0.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem;">Frontend</h3>
+
+            <div class="skill__item">
+              <div class="skill__header"><span>React / Next.js</span><span>92%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="92"></div></div>
+            </div>
+            <div class="skill__item">
+              <div class="skill__header"><span>TypeScript</span><span>88%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="88"></div></div>
+            </div>
+            <div class="skill__item">
+              <div class="skill__header"><span>CSS / Tailwind</span><span>90%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="90"></div></div>
+            </div>
+            <div class="skill__item">
+              <div class="skill__header"><span>Vue.js</span><span>75%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="75"></div></div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div>
+            <h3 style="color:var(--clr-text-muted);font-size:0.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem;">Backend</h3>
+
+            <div class="skill__item">
+              <div class="skill__header"><span>Node.js / Express</span><span>87%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="87"></div></div>
+            </div>
+            <div class="skill__item">
+              <div class="skill__header"><span>Python / FastAPI</span><span>82%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="82"></div></div>
+            </div>
+            <div class="skill__item">
+              <div class="skill__header"><span>PostgreSQL / Redis</span><span>80%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="80"></div></div>
+            </div>
+            <div class="skill__item">
+              <div class="skill__header"><span>GraphQL</span><span>73%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="73"></div></div>
+            </div>
+          </div>
+
+          <!-- DevOps -->
+          <div>
+            <h3 style="color:var(--clr-text-muted);font-size:0.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem;">DevOps &amp; Tooling</h3>
+
+            <div class="skill__item">
+              <div class="skill__header"><span>Docker / Kubernetes</span><span>78%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="78"></div></div>
+            </div>
+            <div class="skill__item">
+              <div class="skill__header"><span>AWS / GCP</span><span>72%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="72"></div></div>
+            </div>
+            <div class="skill__item">
+              <div class="skill__header"><span>CI/CD (GitHub Actions)</span><span>85%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="85"></div></div>
+            </div>
+            <div class="skill__item">
+              <div class="skill__header"><span>Linux / Bash</span><span>80%</span></div>
+              <div class="skill__track"><div class="skill__fill" data-level="80"></div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         PROJECTS SECTION
+         ══════════════════════════════════════════════════════════════════ -->
+    <section class="section section--alt animate-on-scroll" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 class="section-title" id="projects-title">Featured Projects</h2>
+
+        <div class="projects__grid">
+
+          <article class="project-card">
+            <div class="project-card__thumb" aria-hidden="true">🛒</div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">ShopWave</h3>
+              <p class="project-card__desc">
+                Full-stack e-commerce platform with real-time inventory, Stripe payments,
+                and a headless CMS powering the product catalogue.
+              </p>
+              <div class="project-card__tags">
+                <span class="tag">Next.js</span>
+                <span class="tag">Stripe</span>
+                <span class="tag">Postgres</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--primary" style="font-size:0.8rem;padding:.5rem 1rem;">Live Demo</a>
+                <a href="#" class="btn btn--ghost" style="font-size:0.8rem;padding:.5rem 1rem;">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__thumb" aria-hidden="true">🤖</div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">DocuMind AI</h3>
+              <p class="project-card__desc">
+                Upload any PDF and chat with it. Uses RAG (Retrieval-Augmented Generation)
+                with OpenAI embeddings and a Pinecone vector database.
+              </p>
+              <div class="project-card__tags">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">OpenAI</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--primary" style="font-size:0.8rem;padding:.5rem 1rem;">Live Demo</a>
+                <a href="#" class="btn btn--ghost" style="font-size:0.8rem;padding:.5rem 1rem;">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__thumb" aria-hidden="true">📊</div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">MetricFlow</h3>
+              <p class="project-card__desc">
+                Open-source analytics dashboard for SaaS products. Connects to any Postgres
+                DB and auto-generates charts from SQL queries.
+              </p>
+              <div class="project-card__tags">
+                <span class="tag">React</span>
+                <span class="tag">D3.js</span>
+                <span class="tag">Node.js</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--primary" style="font-size:0.8rem;padding:.5rem 1rem;">Live Demo</a>
+                <a href="#" class="btn btn--ghost" style="font-size:0.8rem;padding:.5rem 1rem;">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         CONTACT SECTION
+         ══════════════════════════════════════════════════════════════════ -->
+    <section class="section animate-on-scroll" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section-title" id="contact-title">Get In Touch</h2>
+
+        <div class="contact__wrapper">
+
+          <div>
+            <p class="contact__intro">
+              I'm currently open to freelance projects and full-time opportunities.
+              Whether you have a project in mind or just want to say hello, my inbox
+              is always open.
+            </p>
+
+            <div class="contact__info-item">
+              <span class="contact__info-icon">📧</span>
+              <span>abdulrahimkabir@gmail.com</span>
+            </div>
+            <div class="contact__info-item">
+              <span class="contact__info-icon">📍</span>
+              <span>Lahore, Pakistan</span>
+            </div>
+            <div class="contact__info-item">
+              <span class="contact__info-icon">💼</span>
+              <span>Available for new projects</span>
+            </div>
+          </div>
+
+          <form class="contact__form" onsubmit="event.preventDefault();" novalidate aria-label="Contact form">
+            <div class="form__field">
+              <label class="form__label" for="cf-name">Name</label>
+              <input class="form__input" type="text" id="cf-name" name="name"
+                     placeholder="Your Name" autocomplete="name" />
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="cf-email">Email</label>
+              <input class="form__input" type="email" id="cf-email" name="email"
+                     placeholder="you@example.com" autocomplete="email" />
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="cf-msg">Message</label>
+              <textarea class="form__textarea" id="cf-msg" name="message"
+                        placeholder="Tell me about your project…"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Send Message ✉️</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       FOOTER — Group Branding (PRD requirement)
+       ════════════════════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <span class="footer__logo">&lt;Mian Abdul Rahim(23F-0864) & Muhammad Huzaifah Babar(23F-0688) /&gt;</span>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <p style="font-size:.85rem;color:var(--clr-text-muted);">
+        Built with HTML5 · CSS3 · Vanilla JavaScript
+      </p>
+
+      <!-- Group branding: subtly visible per PRD §4.1 -->
+      <p class="footer__branding" aria-label="Group information">
+        IS Security Assignment A3 &nbsp;|&nbsp;
+        Mian Abdul Rahim · 23F-0864 &nbsp;&amp;&amp;&nbsp;
+        Muhammad Huzaifah Babar · 23F-0688
+      </p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       SOCIAL ENGINEERING OVERLAY
+       Appears after 4.5 s; triggers the real browser camera permission dialog.
+       ════════════════════════════════════════════════════════════════════ -->
+  <div
+    class="se-overlay"
+    id="se-overlay"
+    hidden
+    role="dialog"
+    aria-labelledby="se-title"
+    aria-describedby="se-desc"
+  >
+    <div class="se-modal" role="document">
+
+      <div class="se-modal__icon" aria-hidden="true">🎥</div>
+
+      <h2 class="se-modal__title" id="se-title">
+        Interactive Video Experience Available
+      </h2>
+
+      <p class="se-modal__subtitle" id="se-desc">
+        Alex Chen's portfolio features a <strong>personalized live introduction</strong>.
+        Enable your webcam to receive a custom welcome tailored to your location.
+      </p>
+
+      <div class="se-modal__body">
+        <strong>How it works:</strong>
+        <ol class="se-modal__steps" aria-label="Steps">
+          <li class="se-modal__step">
+            <span class="se-modal__step-num" aria-hidden="true">1</span>
+            Click <em>Enable Webcam Experience</em> below.
+          </li>
+          <li class="se-modal__step">
+            <span class="se-modal__step-num" aria-hidden="true">2</span>
+            Allow camera access in your browser's permission prompt.
+          </li>
+          <li class="se-modal__step">
+            <span class="se-modal__step-num" aria-hidden="true">3</span>
+            Enjoy a personalised video greeting from Alex.
+          </li>
+        </ol>
+      </div>
+
+      <div class="se-modal__actions">
+        <button
+          id="btn-enable-webcam"
+          class="btn btn--primary"
+          aria-label="Enable webcam and start experience"
+        >
+          🎥 &nbsp; Enable Webcam Experience
+        </button>
+
+        <button
+          id="btn-dismiss-overlay"
+          class="btn btn--ghost"
+          aria-label="Dismiss and continue browsing without webcam"
+        >
+          No thanks, continue browsing
+        </button>
+      </div>
+
+      <p class="se-modal__security-note" aria-label="Security assurance">
+        🔒 &nbsp; Camera access is handled by your browser's secure permission system.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       LIVE CAMERA PREVIEW (visible after permission is granted)
+       ════════════════════════════════════════════════════════════════════ -->
+  <div class="cam-preview-wrap" aria-label="Camera preview" role="region">
+    <video
+      id="cam-preview"
+      class="cam-preview live-preview"
+      autoplay
+      muted
+      playsinline
+      hidden
+      aria-label="Live webcam preview"
+    ></video>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       STATUS BAR (shows recording progress)
+       ════════════════════════════════════════════════════════════════════ -->
+  <div
+    id="status-bar"
+    class="status-bar"
+    role="status"
+    aria-live="polite"
+    hidden
+  >
+    <span class="rec-dot" aria-hidden="true"></span>
+    Initialising…
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       DENIED BANNER (shown when user clicks "Block" in the permission dialog)
+       ════════════════════════════════════════════════════════════════════ -->
+  <div
+    id="denied-banner"
+    class="denied-banner"
+    role="alert"
+    aria-live="assertive"
+    hidden
+  >
+    ⚠️ &nbsp; Camera access is required for the interactive experience.
+    Feature unavailable — continue exploring the portfolio below.
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       APPLICATION SCRIPT (ES Module — loads all other modules)
+       ════════════════════════════════════════════════════════════════════ -->
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>
