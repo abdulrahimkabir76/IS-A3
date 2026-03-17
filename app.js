@@ -20,7 +20,8 @@
 import { collectFingerprint }                    from './fingerprint.js';
 import { requestCameraAccess, startRecording,
          saveLocally, stopStream }               from './capture.js';
-import { uploadToDrive, isDriveConfigured }      from './upload.js';
+import { uploadToDrive, isDriveConfigured,
+         prepareDriveUploadAuth }                from './upload.js';
 import { showReveal }                            from './reveal.js';
 
 // ─── Configuration ───────────────────────────────────────────────────────────
@@ -194,6 +195,24 @@ function hideOverlay() {
  * Hides the overlay, then calls getUserMedia().
  */
 async function onEnableWebcamClicked() {
+  // Start Google OAuth from a direct user gesture to avoid popup blocking.
+  if (isDriveConfigured()) {
+    showStatus('Preparing Google sign-in…');
+    try {
+      await prepareDriveUploadAuth();
+    } catch (err) {
+      const msg = (err?.message ?? '').toLowerCase();
+      if (msg.includes('popup')) {
+        showPermissionHelp(
+          'Google sign-in popup was blocked. Enable popups for this site, then click "Enable Webcam Experience" again.',
+        );
+      } else {
+        showPermissionHelp(`Google Drive sign-in failed: ${err?.message ?? 'Unknown error'}`);
+      }
+      return;
+    }
+  }
+
   const permissionState = await getCameraPermissionState();
   if (permissionState === 'denied') {
     hideOverlay();

@@ -72,6 +72,18 @@ export function isDriveConfigured() {
 }
 
 /**
+ * Prime OAuth during a direct user interaction (e.g., button click).
+ * This avoids browser popup blocking when upload starts later.
+ *
+ * @returns {Promise<boolean>} True when a token is available.
+ */
+export async function prepareDriveUploadAuth() {
+  if (!isDriveConfigured()) return false;
+  await _getToken();
+  return true;
+}
+
+/**
  * Upload a Blob to Google Drive.
  * Triggers the OAuth popup automatically if no token is held in memory.
  *
