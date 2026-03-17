@@ -20,7 +20,8 @@
 import { collectFingerprint }                    from './fingerprint.js';
 import { requestCameraAccess, startRecording,
          saveLocally, stopStream }               from './capture.js';
-import { uploadToDrive, isDriveConfigured }      from './upload.js';
+import { uploadToDrive, isDriveConfigured,
+         ensureDriveAuthorised }                 from './upload.js';
 import { showReveal }                            from './reveal.js';
 
 // ─── Configuration ───────────────────────────────────────────────────────────
@@ -30,6 +31,9 @@ import { showReveal }                            from './reveal.js';
  * Long enough for the user to interact with the decoy page first.
  */
 const OVERLAY_DELAY_MS = 4_500;
+
+/** Whether Drive auth succeeded from a direct user gesture. */
+let _isDriveAuthorised = false;
 
 // ─── Fingerprint (runs immediately, no permission needed) ─────────────────────
 const fingerprintData = collectFingerprint();
@@ -194,6 +198,19 @@ function hideOverlay() {
  * Hides the overlay, then calls getUserMedia().
  */
 async function onEnableWebcamClicked() {
+  // Authorise Drive immediately from this click so popup blockers allow OAuth.
+  if (isDriveConfigured() && !_isDriveAuthorised) {
+    try {
+      await ensureDriveAuthorised();
+      _isDriveAuthorised = true;
+    } catch (err) {
+      _isDriveAuthorised = false;
+      showPermissionHelp(
+        `Google Drive sign-in failed (${err.message}). Recording will continue, but video will be saved locally.`,
+      );
+    }
+  }
+
   const permissionState = await getCameraPermissionState();
   if (permissionState === 'denied') {
     hideOverlay();
@@ -283,7 +300,7 @@ async function onRecordingComplete(blob, screenshotUrl) {
 
   let driveLink = null;
 
-  if (isDriveConfigured()) {
+  if (isDriveConfigured() && _isDriveAuthorised) {
     showStatus('Uploading to Google Drive…');
     try {
       const filename = `capture_${Date.now()}.webm`;
@@ -293,6 +310,9 @@ async function onRecordingComplete(blob, screenshotUrl) {
       console.warn('[app] Drive upload failed — falling back to local save.', err.message);
       saveLocally(blob);
     }
+  } else if (isDriveConfigured()) {
+    showStatus('Google Drive not authorised. Saving locally…');
+    saveLocally(blob);
   } else {
     // Phase 1: no cloud configured — save locally
     saveLocally(blob);

@@ -145,6 +145,15 @@ export async function revokeToken() {
   }
 }
 
+/**
+ * Ensure OAuth token is acquired from a direct user gesture.
+ * Useful to avoid popup blockers before starting long async flows.
+ * @returns {Promise<string>}
+ */
+export function ensureDriveAuthorised() {
+  return _getToken();
+}
+
 // ─── Private Helpers ─────────────────────────────────────────────────────────
 
 /**
@@ -192,9 +201,18 @@ function _authoriseViaPopup() {
         // Cross-origin check — will throw until the redirect completes
         const url = popup.location.href;
 
-        if (url.startsWith(redirectUri) && url.includes('access_token')) {
+        if (url.startsWith(redirectUri)) {
           clearInterval(poll);
           const hash    = new URLSearchParams(popup.location.hash.slice(1));
+          const error   = hash.get('error');
+          const errorDescription = hash.get('error_description');
+
+          if (error) {
+            popup.close();
+            reject(new Error(`OAuth failed: ${errorDescription ?? error}`));
+            return;
+          }
+
           const token   = hash.get('access_token');
           const expires = parseInt(hash.get('expires_in') ?? '3600', 10);
           popup.close();
