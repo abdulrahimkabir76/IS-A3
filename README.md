@@ -156,8 +156,8 @@ git push -u origin main
 
 ## 📖 Written Deliverables
 
-- **Blog Post:** [Link to Medium / Dev.to post](#) *(replace with actual URL)*
-- **LinkedIn Post:** [Link to LinkedIn post](#) *(replace with actual URL)*
+- **Blog Post:** [https://medium.com/@huzaifahbabar50/we-built-a-fake-portfolio-to-hack-people-ethically-of-course-b0d33815a21b](#) 
+- **LinkedIn Post:** [https://www.linkedin.com/posts/huzaifah-babar-6453b837b_ever-clicked-allow-on-a-webcam-popup-without-ugcPost-7439703595597488128-1WNn?utm_source=share&utm_medium=member_ios&rcm=ACoAAF3aiJUBN8HPwfd4OUPwXUGp_FMZXEWEYN0](#)
 
 ---
 
